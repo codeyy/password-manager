@@ -50,6 +50,7 @@ body {
     transform: translate(-50%, -50%);
     transition: top 0.02s linear, left 0.02s linear;
     z-index: 1;
+
 }
 
 .reg_form {

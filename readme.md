@@ -106,4 +106,3 @@ Exception handling and Flask error decorators
 CS50x 2025 Final Project
 
 [github](https://github.com/agam027)
-
