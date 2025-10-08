@@ -1,0 +1,302 @@
+body {
+    background-image: url('/static/BACKGROUND.jpg');
+    background-size: cover;
+    /* Scales the image to cover the entire element */
+    background-position: center center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents image tiling */
+    background-attachment: fixed;
+    /* Keeps the background image fixed during scrolling */
+    position: relative;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+    animation: fall linear infinite;
+    user-select: none;
+    z-index: 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+
+
+/* This div will act as the moving glow */
+#glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.307) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(70px);
+    transform: translate(-50%, -50%);
+    transition: top 0.02s linear, left 0.02s linear;
+    z-index: 1;
+}
+
+.reg_form {
+    position: fixed;
+    /* 👈 stays in place relative to viewport */
+    top: 40%;
+    /* move vertically */
+    right: 25vw;
+    /* distance from right edge */
+    transform: translateY(-50%);
+    /* perfectly vertical center */
+    max-width: 90vw;
+    background: transparent;
+    padding: 2rem;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 530px) {
+    .reg_form {
+        right: 50%;
+        /* move to horizontal center */
+        transform: translate(50%, -50%);
+        /* center both horizontally & vertically */
+        width: 65%;
+        /* shrink to fit screen nicely */
+    }
+
+    .form-input {
+        right: 50%;
+        /* move to horizontal center */
+        transform: translate(50%, -50%);
+        /* center both horizontally & vertically */
+        width: 65%;
+        /* shrink to fit screen nicely */
+    }
+
+    table {
+        font-size: 50%;
+        right: 0%;
+        /* move to horizontal center */
+        transform: translate(50%, -50%);
+        /* center both horizontally & vertically */
+        width: 65%;
+        /* shrink to fit screen nicely */
+    }
+}
+
+.reg-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30rem;
+    padding: 0 5vw;
+}
+
+.form-input {
+    font-family: 'Poppins';
+    font-weight: 700;
+    border-radius: 7.5px;
+    color: white;
+    z-index: 1;
+    outline: none;
+    padding: 0.6rem 2.5rem 0.6rem 0.6rem;
+    border: none;
+    background-color: rgba(123, 123, 123, 0.314);
+    box-shadow: 0 3px 8px rgba(201, 199, 199, 0.46);
+    padding: 15px;
+    padding-right: 150px;
+}
+
+.form-input:hover {
+    box-shadow: 0 0 1000px rgba(201, 199, 199, 0.181);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.toggle-password {
+    font-size: 15px;
+    position: absolute;
+    right: 42px;
+    /* spacing from right edge */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.form-button {
+    border-radius: 7.5px;
+    outline: none;
+    border: none;
+    background-color: rgba(123, 123, 123, 0.314);
+    box-shadow: 0 3px 8px rgba(201, 199, 199, 0.46);
+    padding: 10px;
+    padding-right: 50px;
+    color: rgba(255, 255, 255, 0.49);
+}
+
+.form-button:hover {
+    background-color: rgba(255, 255, 255, 0.49);
+    color: black;
+    cursor: pointer;
+    box-shadow: 100px 0 300px rgba(201, 199, 199, 0.764);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.top-buttons {
+    margin-right: 18px;
+    border-radius: 7.5px;
+    outline: none;
+    border: none;
+    background-color: rgba(123, 123, 123, 0.314);
+    box-shadow: 0 3px 8px rgba(201, 199, 199, 0.46);
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.49);
+}
+
+.top-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.49);
+    color: black;
+    cursor: pointer;
+    box-shadow: 100px 0 300px rgba(201, 199, 199, 0.764);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+nav {
+    max-width: 80vw;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+nav img {
+    color: red;
+    position: relative;
+    z-index: 2;
+    width: 80px;
+}
+
+nav button {
+    position: relative;
+    z-index: 2;
+}
+
+.dash-table-container {
+    float: right;
+    max-width: 90vw;
+    margin: auto;
+    margin-top: 2rem;
+    margin-right: 40rem;
+    background: transparent;
+    color: white;
+}
+
+table {
+    position: fixed;
+    /* 👈 stays in place relative to viewport */
+    top: 40%;
+    /* move vertically */
+    right: 25vw;
+    /* distance from right edge */
+    transform: translateY(-50%);
+    /* perfectly vertical center */
+    max-width: 90vw;
+    background: transparent;
+    width: 320px;
+    font-family: 'Poppins';
+
+    border-collapse: separate;
+    /* ensures single lines, no double borders */
+    margin: 20px auto;
+    border: 5px solid rgba(220, 220, 220, 0.433);
+    /* border around the entire table */
+    box-shadow: 5px 4px 20px rgb(64, 64, 64);
+    border-spacing: 40px 15px;
+    border-radius: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    background: transparent;
+}
+
+th {
+    background: transparent;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: transparent;
+    color: white;
+}
+
+.Pass_form {
+    position: fixed;
+    /* 👈 stays in place relative to viewport */
+    top: 40%;
+    /* move vertically */
+    right: 25vw;
+    /* distance from right edge */
+    transform: translateY(-50%);
+    /* perfectly vertical center */
+    max-width: 90vw;
+    background: transparent;
+    padding: 2rem;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.pass-form-button {
+    margin-top: 20px;
+    border-radius: 7.5px;
+    outline: none;
+    border: none;
+    background-color: rgba(123, 123, 123, 0.314);
+    box-shadow: 0 3px 8px rgba(201, 199, 199, 0.46);
+    padding: 10px;
+    padding-right: 50px;
+    color: rgba(255, 255, 255, 0.49);
+}
+
+.pass-form-button:hover {
+    background-color: rgba(255, 255, 255, 0.49);
+    color: black;
+    cursor: pointer;
+    box-shadow: 100px 0 300px rgba(201, 199, 199, 0.764);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.pass-label {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(191, 191, 191, 0.627);
+    font-family: 'Poppins';
+}
+
+.pass-table-rows {
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
+}

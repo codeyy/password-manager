@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<a href="/register" class="form-button" style="text-decoration: none; float: right; margin-right: 6vw">Register</a>
+
+
+<form method="POST" action="/login" class="reg_form">
+
+    <input type="text" placeholder="Username" id="log-username" name="username" required class="form-input" autocomplete="off"><br><br>
+
+    <input type="password" placeholder="Password" id="log-password" name="password" required class="form-input" autocomplete="off">
+
+    <span id="toggle-log-Password" class="toggle-password" style="top: 45%;">Show</span>
+
+    <br><br><br>
+
+    <input type="submit" value="Login" class="form-button">
+</form>
+
+<script>
+    const passwordInput = document.getElementById('log-password');
+    const toggleButton = document.getElementById('toggle-log-Password');
+
+    toggleButton.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.textContent = type === 'password' ? 'Show' : 'Hide';
+    });
+</script>
+
+
+{% endblock %}

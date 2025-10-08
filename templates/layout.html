@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassVault</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div id="glow"></div>
+  {% block main %}
+
+  {% endblock %}
+</body>
+<script>
+  const glow = document.getElementById('glow');
+
+  document.addEventListener('mousemove', (e) => {
+    glow.style.top = e.clientY + 'px';
+    glow.style.left = e.clientX + 'px';
+  });
+</script>
+<script>
+  const snowCount = 75; // Number of snowflakes
+  for (let i = 0; i < snowCount; i++) {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄'; // Snowflake character
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.zIndex = Math.floor(Math.random() - 1);
+    snowflake.style.animationDuration = 5 + Math.random() * 10 + "s";
+    snowflake.style.fontSize = 5 + Math.random() * 10 + "px";
+    snowflake.style.animationDelay = Math.random() * 10 + "s";
+    document.body.appendChild(snowflake);
+  }
+</script>
+
+</html>

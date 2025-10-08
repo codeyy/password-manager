@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<div id="glow"></div>
+<div>
+    <nav>
+        <span><a href="/"><img width="50" src="/static/favicon.png" alt="logo"></span></a>
+        <div>
+            <a href="/passwords" method="GET"><button class="top-buttons" id="dash-passwords">My Passwords</button></a>
+            <a href="/add-password" method="GET"><button class="top-buttons" id="add_p">Add Password</button></a>
+            <a href="/logout" method="GET"><button class="top-buttons" id="home">Logout</button></a>
+        </div>
+    </nav>
+</div>
+<div class="dash-table-container">
+    <table class="table">
+        <tr>
+            <th colspan="3" style=" border-bottom: 3px solid rgba(220, 220, 220, 0.433); font-size: 15px">
+                <b>
+                    <pre>S   A   V   E   S</pre>
+                </b>
+            </th>
+        </tr>
+        <tr>
+            <th style="font-size: 20px" title="The name of the website/app/service the password is for.">Service</th>
+            <th style="font-size: 20px" title="The username or email used for that service.">Username</th>
+            <th style="font-size: 20px" title="Optional label to organize passwords.">Category</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td style=" font-size: 12px">{{ entry[0] }}</td>
+            <td style=" font-size: 12px">{{ entry[1] }}</td>
+            <td style=" font-size: 12px">{{ entry[2] }}</td>
+        </tr>
+        {% endfor %}
+</div>
+
+{% endblock %}
