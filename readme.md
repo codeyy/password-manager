@@ -48,3 +48,62 @@ project/
 │ └── error.html
 └── passvault.db
 
+---
+
+## ⚙️ Installation & Setup
+
+###
+1️⃣ Clone the repository
+```bash
+git clone https://github.com/agam027/project.git
+cd project
+
+2️⃣ Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+3️⃣ Install dependencies
+pip install -r requirements.txt
+
+4️⃣ Run the app
+flask run
+
+
+Then open your browser and go to:
+
+http://127.0.0.1:5000/
+
+
+
+🔑 Security Notes:
+
+Passwords are never stored in plaintext.
+
+Each user’s vault is encrypted with a derived key using a Key Derivation Function (KDF) and a per-user salt.
+
+Flask’s session cookies are secured with a random secret key.
+
+🧠 Learning Outcome
+
+This project helped me explore:
+
+Flask routing and Jinja2 templating
+
+Secure password hashing & encryption
+
+Database CRUD operations
+
+Frontend polish with CSS and UI/UX design
+
+Exception handling and Flask error decorators
+
+📸 Screenshots
+
+
+
+🧑‍💻 Author
+-Agam Kumar
+CS50x 2025 Final Project
+
+[github](https://github.com/agam027)
+
