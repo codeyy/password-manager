@@ -1,20 +1,25 @@
 {% extends "layout.html" %}
 {% block main %}
 
-<a href="/register" class="form-button" style="text-decoration: none; float: right; margin-right: 6vw">Register</a>
-
+<nav>
+    <span></span>
+    <a href="/register" class="form-button" style="text-decoration: none; float: right; margin-right: 6vw">Register</a>
+</nav>
 
 <form method="POST" action="/login" class="reg_form">
 
-    <input type="text" placeholder="Username" id="log-username" name="username" required class="form-input" autocomplete="off"><br><br>
+    {% if error %}
+        <div class="top-error">{{ error }}</div>
+    {% endif %}
+    <input type="text" placeholder="Username" id="log-username" name="username" class="form-input" autocomplete="off"><br><br>
 
-    <input type="password" placeholder="Password" id="log-password" name="password" required class="form-input" autocomplete="off">
+    <input type="password" placeholder="Password" id="log-password" name="password" class="form-input" autocomplete="off">
 
     <span id="toggle-log-Password" class="toggle-password" style="top: 45%;">Show</span>
 
     <br><br><br>
 
-    <input type="submit" value="Login" class="form-button">
+    <input type="submit" value="Login" class="form-button" id="log-button">
 </form>
 
 <script>
@@ -26,6 +31,22 @@
         passwordInput.setAttribute('type', type);
         this.textContent = type === 'password' ? 'Show' : 'Hide';
     });
+</script>
+<script>
+    const submitButton = document.querySelector('#log-button');
+    const usernameInput = document.querySelector('#log-username');
+    const passwordInputField = document.querySelector('#log-password');
+    submitButton.addEventListener('click', function (event) {
+        if (usernameInput.value.trim() === '') {
+            event.preventDefault(); // Prevent form submission
+            usernameInput.style.border = '1px solid red';
+        }
+        if (passwordInputField.value.trim() === '') {
+            event.preventDefault(); // Prevent form submission
+            passwordInputField.style.border = '1px solid red';
+        }
+    });
+
 </script>
 
 

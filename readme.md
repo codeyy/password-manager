@@ -21,7 +21,7 @@ It allows users to register, log in securely, and manage their saved passwords �
 - **Frontend:** HTML, CSS, Bootstrap
 - **Backend:** Python (Flask)
 - **Database:** SQLite3
-- **Encryption:** Python’s `cryptography` library (Fernet / AES)
+- **Encryption:** Python’s `cryptography` library (Fernet / AES) in security.py
 - **Other:** Jinja2 Templates
 
 ---
@@ -97,12 +97,10 @@ Frontend polish with CSS and UI/UX design
 
 Exception handling and Flask error decorators
 
-📸 Screenshots
-
 
 
 🧑‍💻 Author
--Agam Kumar
+-`Agam Kumar`
 CS50x 2025 Final Project
 
 [github](https://github.com/agam027)

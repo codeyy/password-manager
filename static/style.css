@@ -68,6 +68,7 @@ body {
     width: 320px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 }
 
 @media (max-width: 530px) {
@@ -200,55 +201,48 @@ nav button {
 }
 
 .dash-table-container {
-    float: right;
-    max-width: 90vw;
-    margin: auto;
-    margin-top: 2rem;
-    margin-right: 40rem;
-    background: transparent;
-    color: white;
+  position: fixed;
+  top: 13rem;
+  right: 25vw;
+  max-height: 60vh;     /* limit only AFTER 60% of screen height */
+  overflow-y: auto;      /* scroll appears only when needed */
+  max-width: 90vw;
+
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(220, 220, 220, 0.842);
+  border-radius: 20px;
+  box-shadow: 5px 4px 20px rgb(64, 64, 64);
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+.dash-table-container::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Edge */
 }
 
 table {
-    position: fixed;
-    /* 👈 stays in place relative to viewport */
-    top: 40%;
-    /* move vertically */
-    right: 25vw;
-    /* distance from right edge */
-    transform: translateY(-50%);
-    /* perfectly vertical center */
-    max-width: 90vw;
-    background: transparent;
-    width: 320px;
-    font-family: 'Poppins';
-
-    border-collapse: separate;
-    /* ensures single lines, no double borders */
-    margin: 20px auto;
-    border: 5px solid rgba(220, 220, 220, 0.433);
-    /* border around the entire table */
-    box-shadow: 5px 4px 20px rgb(64, 64, 64);
-    border-spacing: 40px 15px;
-    border-radius: 20px;
+  position: static;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 40px 15px;
+  background: transparent;
+  font-family: 'Poppins';
 }
 
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    background: transparent;
+th, td {
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
 
 th {
-    background: transparent;
-    color: white;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
 
-tr:nth-child(even) {
-    background: transparent;
-    color: white;
-}
 
 .Pass_form {
     position: fixed;
@@ -300,4 +294,35 @@ tr:nth-child(even) {
     margin: 10px 0px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.top-error{
+    color: rgb(246, 63, 63);
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.hints{
+    color: rgba(255, 97, 97, 0.627);
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.update_msg{
+    color: rgb(255, 0, 0);
+    animation: glow 1.5s infinite;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: right;
+    font-family: 'Poppins';
+    background: transparent;
+    border: none;
+    margin-right: 20px;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(97, 255, 255, 0.52);
 }

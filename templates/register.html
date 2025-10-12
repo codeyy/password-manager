@@ -1,7 +1,19 @@
 {% extends "layout.html" %}
 {% block main %}
 
-<a href="/login" class="form-button" style="text-decoration: none; float: right; margin-right: 6vw">Login</a>
+<nav>
+    <span></span>
+    <a href="/login" class="form-button" style="text-decoration: none; float: right; margin-right: 7vw">Login</a>
+</nav>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+            {% for category, message in messages %}
+            <button class="update_msg form-button" style="float: right; margin-right: 8vw">
+                {{message}}
+            </button>
+            {% endfor %}
+    {% endif %}
+{% endwith %}
 
 <form method="POST" action="/register" class="reg_form">
 
@@ -12,10 +24,12 @@
         autocomplete="off">
     <span id="toggle-reg-Password" class="toggle-password" style="top: 38%;">Show</span>
     <br>
-    <input type="password" placeholder="Re-enter Password" id="re-reg-password" name="password" required
+    <input type="password" placeholder="Re-enter Password" id="re-reg-password" name="re-password" required
         class="form-input" autocomplete="off">
-    <br><br><br>
-    <input type="submit" value="Register" class="form-button">
+    <div class="hints" id="reg-hints">
+        <br><br><br>
+    </div>
+    <input type="submit" value="Register" class="form-button" id="reg-button">
 </form>
 
 <script>
@@ -28,6 +42,62 @@
         this.textContent = type === 'password' ? 'Show' : 'Hide';
     });
 </script>
+<script>
+    const submitButton = document.querySelector('#reg-button');
+    const usernameInput = document.querySelector('#reg-username');
+    const passwordInputField = document.querySelector('#reg-password');
+    const rePasswordInputField = document.querySelector('#re-reg-password');
 
+    submitButton.addEventListener('click', function (event) {
+        if (usernameInput.value.trim() === '') {
+            event.preventDefault(); // Prevent form submission
+            usernameInput.style.border = '1px solid red';
+        }
+        if (passwordInputField.value.trim() === '') {
+            event.preventDefault(); // Prevent form submission
+            passwordInputField.style.border = '1px solid red';
+        }
+        if (rePasswordInputField.value.trim() === '') {
+            event.preventDefault(); // Prevent form submission
+            rePasswordInputField.style.border = '1px solid red';
+        }
+        if (passwordInputField.value.length < 10) {
+            event.preventDefault(); // Prevent form submission
+            passwordInputField.style.border = '1px solid red';
+        }
+    });
+    passwordInputField.addEventListener('input', function () {
+        const hintsDiv = document.getElementById('reg-hints');
+        if (passwordInputField.value.length >= 10) {
+            passwordInputField.style.border = '';
+            hintsDiv.innerHTML = "";
+            hintsDiv.innerHTML = "<br><br><br>";
+        } else {
+            passwordInputField.style.border = '1px solid red';
+            hintsDiv.innerHTML = "";
+            hintsDiv.innerHTML = "Password must be at least 10 characters long. <br><br>";
+            hintsDiv.style.marginTop = "10px";
+        }
+    });
+    rePasswordInputField.addEventListener('input', function () {
+        if (rePasswordInputField.value !== passwordInputField.value) {
+            rePasswordInputField.style.border = '1px solid red';
+        } else {
+            rePasswordInputField.style.border = '';
+        }
+    });
+</script>
+
+{% if method == get %}
+<script>
+    const for_password_alert = document.getElementById('reg-password');
+    for_password_alert.addEventListener('click', function () {
+        alert(
+            "WE REQUEST YOU TO PLEASE SET UP A STRONG PASSWORD AND REMEMBER IT (you CAN'T reset your Password Later)"
+        );
+    });
+
+</script>
+{% endif %}
 
 {% endblock %}
