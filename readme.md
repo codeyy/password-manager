@@ -1,6 +1,5 @@
-# 🔐 VaultLock
 
-VaultLock is a **secure password manager web app** built as my **CS50 Final Project**.
+This is a **secure password manager web app** built as my **CS50 Final Project**.
 It allows users to register, log in securely, and manage their saved passwords — all encrypted and stored safely in a local SQLite database.
 
 ---
