@@ -1,5 +1,5 @@
 
-This is a **secure password manager web app** built as my **CS50 Final Project**.
+This is a **secure password manager web app**.
 It allows users to register, log in securely, and manage their saved passwords — all encrypted and stored safely in a local SQLite database.
 
 ---
@@ -7,7 +7,7 @@ It allows users to register, log in securely, and manage their saved passwords �
 ## 🚀 Features
 
 - **User Authentication** — Secure login & registration using hashed passwords.
-- **AES Encryption** — Passwords are encrypted using AES before storage.
+- **AES Encryption** — Passwords are encrypted using AES(Advanced Encryption Standard) before storage.
 - **Add / View / Delete Passwords** — Manage credentials by service name, username, and category.
 - **Error Handling** — Custom error pages for all exceptions.
 - **Modern UI** — A dark, minimal cyber-inspired design with smooth glassmorphism and particle animation.
@@ -17,35 +17,11 @@ It allows users to register, log in securely, and manage their saved passwords �
 
 ## 🖥️ Tech Stack
 
-- **Frontend:** HTML, CSS, Bootstrap
-- **Backend:** Python (Flask)
+- **Frontend:** HTML, CSS, Javascript
+- **Backend:** Python (Flask framework)
 - **Database:** SQLite3
-- **Encryption:** Python’s `cryptography` library (Fernet / AES) in security.py
+- **Encryption:** Python’s `cryptography` library (AES) in security.py
 - **Other:** Jinja2 Templates
-
----
-
-## 📦 Project Structure
-
-project/
-├── app.py
-├── security.py
-├── requirements.txt
-├── README.md
-├── /static
-│ ├── style.css
-│ ├── favicon.ico
-│ ├── favicon.png
-│ └── BACKGROUND.jpg
-├── /templates
-│ ├── layout.html
-│ ├── register.html
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── add_password.html
-│ ├── passwords.html
-│ └── error.html
-└── passvault.db
 
 ---
 
@@ -54,7 +30,7 @@ project/
 ###
 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/agam027/project.git
+git clone https://github.com/codeyy/project.git
 cd project
 
 2️⃣ Create a virtual environment
@@ -100,6 +76,5 @@ Exception handling and Flask error decorators
 
 🧑‍💻 Author
 -`Agam Kumar`
-CS50x 2025 Final Project
 
-[github](https://github.com/agam027)
+[github](https://github.com/codeyy)
