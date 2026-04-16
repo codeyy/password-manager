@@ -33,7 +33,6 @@ It allows users to register, log in securely, and manage their passwords — all
 
 ```
 1️⃣ Clone the repository
-bash
 git clone https://github.com/codeyy/password-manager
 cd project
 
