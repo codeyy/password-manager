@@ -14,6 +14,8 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config['SESSION_TYPE'] = 'filesystem'
 
+
+
 @app.route('/')
 def home():
     if not session.get('user_id'):
@@ -25,6 +27,8 @@ def home():
         entries = None
 
     return render_template('dashboard.html', entries=entries)
+
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -44,10 +48,14 @@ def login():
 
     return render_template('login.html')
 
+
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
+
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -71,6 +79,8 @@ def register():
 
         return redirect('/login')
     return render_template('register.html')
+
+
 
 @app.route('/add-password', methods=['GET', 'POST'])
 def add_password():
@@ -105,6 +115,8 @@ def add_password():
     elif request.method == 'GET':
         return render_template('add_password.html')
 
+
+
 @app.route('/del-password', methods=['GET', 'POST'])
 def delete_password():
     if request.method == 'POST':
@@ -131,6 +143,7 @@ def delete_password():
         return redirect('/')
     elif request.method == 'GET':
         return render_template('del_password.html', method="get")
+
 
 
 @app.route('/passwords', methods=['GET', 'POST'])

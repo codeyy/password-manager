@@ -1,6 +1,10 @@
+##### ⚠️ THIS PROJECT IS NOT MAINTAINED, HENCE DEPRECATED.
+Please use [Password-Manager-PRO](https://github.com/codeyy/Password-Manager-PRO) for the latest features.
 
-This is a **secure password manager web app**.
-It allows users to register, log in securely, and manage their saved passwords — all encrypted and stored safely in a local SQLite database.
+# Password-Manager (legacy)
+
+> This is a **secure password manager web app**.
+It allows users to register, log in securely, and manage their passwords — all encrypted and stored safely in a local SQLite database.
 
 ---
 
@@ -20,17 +24,17 @@ It allows users to register, log in securely, and manage their saved passwords �
 - **Frontend:** HTML, CSS, Javascript
 - **Backend:** Python (Flask framework)
 - **Database:** SQLite3
-- **Encryption:** Python’s `cryptography` library (AES) in security.py
+- **Encryption:** Python’s `cryptography` with (AES) in security.py
 - **Other:** Jinja2 Templates
 
 ---
 
 ## ⚙️ Installation & Setup
 
-###
+```
 1️⃣ Clone the repository
-```bash
-git clone https://github.com/codeyy/project.git
+bash
+git clone https://github.com/codeyy/password-manager
 cd project
 
 2️⃣ Create a virtual environment
@@ -71,10 +75,10 @@ Database CRUD operations
 Frontend polish with CSS and UI/UX design
 
 Exception handling and Flask error decorators
-
+```
 
 
 🧑‍💻 Author
 -`Agam Kumar`
 
-[github](https://github.com/codeyy)
+[GitHub >](https://github.com/codeyy)
